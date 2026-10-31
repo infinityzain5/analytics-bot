@@ -1,0 +1,89 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 260" fill="none">
+  <defs>
+    <linearGradient id="headFill" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#19C6FF" stop-opacity="0.16"/>
+      <stop offset="1" stop-color="#0A3A6B" stop-opacity="0.04"/>
+    </linearGradient>
+    <radialGradient id="redGlow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#FF3B5C" stop-opacity="0.45"/>
+      <stop offset="1" stop-color="#FF3B5C" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="2.2" result="b"/>
+      <feMerge>
+        <feMergeNode in="b"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <style>
+      .flow { stroke-dasharray: 7 9; animation: dash 3.5s linear infinite; }
+      @keyframes dash { to { stroke-dashoffset: -64; } }
+      .pulse { animation: pulse 2.4s ease-in-out infinite; }
+      @keyframes pulse { 0%, 100% { opacity: 0.35; } 50% { opacity: 1; } }
+    </style>
+  </defs>
+
+  <!-- laal glow head ke peeche -->
+  <ellipse cx="430" cy="130" rx="70" ry="120" fill="url(#redGlow)"/>
+
+  <!-- left side ke squares -->
+  <g stroke="#19C6FF" stroke-opacity="0.5" stroke-width="1.2">
+    <rect x="70" y="70" width="30" height="30"/>
+    <rect x="70" y="112" width="30" height="30"/>
+    <rect x="70" y="154" width="30" height="30"/>
+  </g>
+
+  <!-- cyan circuit lakeerein -->
+  <g stroke="#19C6FF" stroke-width="1.6" stroke-linejoin="round" filter="url(#glow)">
+    <polyline class="flow" points="0,205 95,205 135,165 270,165 305,128 420,128"/>
+    <polyline points="70,40 170,40 200,72 330,72 360,96 430,96"/>
+    <polyline class="flow" points="130,238 240,238 270,214 390,214 420,188"/>
+  </g>
+
+  <!-- laal lakeer -->
+  <polyline class="flow" stroke="#FF3B5C" stroke-width="1.6" stroke-linejoin="round" filter="url(#glow)"
+            points="0,92 110,92 150,112 290,112 330,100 425,100"/>
+
+  <!-- nodes (chhote gol nishan) -->
+  <circle cx="20" cy="205" r="7" stroke="#19C6FF" stroke-width="2" filter="url(#glow)"/>
+  <g fill="#19C6FF">
+    <circle class="pulse" cx="135" cy="165" r="3"/>
+    <circle class="pulse" cx="305" cy="128" r="3"/>
+    <circle class="pulse" cx="200" cy="72" r="3"/>
+    <circle class="pulse" cx="270" cy="214" r="3"/>
+  </g>
+  <g fill="#FF3B5C">
+    <circle class="pulse" cx="150" cy="112" r="3"/>
+    <circle class="pulse" cx="330" cy="100" r="3"/>
+  </g>
+
+  <!-- binary digits -->
+  <g font-family="monospace" font-size="9" fill="#FF6B86" opacity="0.7">
+    <text x="150" y="26">1 0 1 1 0 0 1</text>
+    <text x="150" y="38">0 1 0 0 1 1</text>
+  </g>
+
+  <!-- AI head -->
+  <g transform="translate(190 0)">
+    <path d="M250 260 L252 205 C228 170 222 110 262 68 C300 26 370 18 414 52 C434 68 440 92 440 110 L458 138 L436 142 L440 158 L430 166 C432 184 420 196 400 204 L380 214 L378 260 Z"
+          fill="url(#headFill)" stroke="#19C6FF" stroke-opacity="0.85" stroke-width="1.6" filter="url(#glow)"/>
+
+    <g stroke="#19C6FF" stroke-opacity="0.8" stroke-width="1.2" stroke-linejoin="round">
+      <polyline points="262,100 300,100 318,118 372,118 392,98 430,98"/>
+      <polyline points="270,140 318,140 336,158 398,158"/>
+      <polyline points="286,64 340,64 358,46 404,50"/>
+      <polyline points="300,190 340,190 356,172 410,172"/>
+    </g>
+    <polyline stroke="#FF3B5C" stroke-opacity="0.9" stroke-width="1.2" stroke-linejoin="round"
+              points="262,120 290,120 306,136 350,136"/>
+
+    <g fill="#19C6FF">
+      <circle class="pulse" cx="430" cy="98" r="2.6"/>
+      <circle class="pulse" cx="398" cy="158" r="2.6"/>
+      <circle class="pulse" cx="404" cy="50" r="2.6"/>
+      <circle class="pulse" cx="410" cy="172" r="2.6"/>
+      <circle class="pulse" cx="318" cy="118" r="2.6"/>
+    </g>
+    <circle class="pulse" cx="350" cy="136" r="2.6" fill="#FF3B5C"/>
+  </g>
+</svg>
